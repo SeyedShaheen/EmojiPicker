@@ -30,7 +30,7 @@ Window {
             headerPositioning: listview.headerItem.searching ? ListView.OverlayHeader : ListView.PullBackHeader;
             model: Emojis.emojis
             delegate: Column{
-                width: parent.width - padding; height: flow.childrenRect.height; spacing: 20; padding: 10
+                width: parent.width - padding; height: modelData.emojis.filter((i) => i.description.includes(listview.headerItem.children[0].text)).length === 0 ? 0 : flow.childrenRect.height; spacing: 20; padding: 10
                 Text{
                     text: modelData.category;
                     visible:  modelData.emojis.filter((i) => i.description.includes(listview.headerItem.children[0].text)).length !== 0 ? true : false}
