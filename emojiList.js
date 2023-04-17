@@ -79,7 +79,7 @@
                     description: "kissing face"
                 },
                 {
-                    emoji: "☺️",
+                    emoji: "😊",
                     description: "smiling face blush pleased"
                 },
                 {
@@ -171,7 +171,7 @@
                     description: "dotted line face invisible"
                 },
                 {
-                    emoji: "😶🌫",
+                    emoji: "😶",
                     description: "face in clouds"
                 },
                 {
@@ -199,7 +199,7 @@
                     description: "lying face liar"
                 },
                 {
-                    emoji: "🫨",
+                    emoji: "😱",
                     description: "shaking face shock"
                 },
                 {
