@@ -9,8 +9,9 @@ Window {
         anchors.fill: parent;
         ListView{
             id: tabview; currentIndex: 0; z: 2; interactive: false; width: parent.width; height: 40; orientation: listview.Horizontal;
-            highlight: Component{
-                Rectangle{z: 1; color: 'green'; opacity: 0.2}} highlightMoveDuration: 200; model: searchModel
+            highlight: Component{Rectangle{z: 1; color: 'green'; opacity: 0.2}}
+            highlightMoveDuration: 200;
+            model: searchModel
             delegate: Rectangle{
                 color: "#f0f0f0"; width: tabview.width/listview.model.length ; height: 40; Text{anchors.centerIn: parent; text: modelData.emojis[1].emoji; font.pointSize: 16}
                 MouseArea{anchors.fill: parent; onClicked: { tabview.currentIndex = index; listview.currentIndex = index;}
