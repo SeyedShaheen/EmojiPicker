@@ -43,7 +43,7 @@ Window {
             anchors { top: tabview.bottom; bottom: parent.bottom; bottomMargin: 10; topMargin: 10 }
             width: parent.width
             clip: true
-            highlightRangeMode: ListView.ApplyRange; preferredHighlightBegin: 0; highlightMoveDuration: 200
+            highlightRangeMode: ListView.ApplyRange; preferredHighlightBegin: 40; highlightMoveDuration: 200
             onContentYChanged: {
                 tabview.currentIndex = indexAt(contentX, contentY) >= 0 ? indexAt(contentX, contentY) : tabview.currentIndex
             }
