@@ -71,7 +71,8 @@ Window {
                 padding: 10
                 Text{
                     text: modelData.category;
-                    visible:  modelData.emojis.filter((i) => i.description.includes(listview.headerItem.children[0].text)).length !== 0 ? true : false}
+                    visible:  modelData.emojis.filter((i) => i.description.includes(listview.headerItem.children[0].text)).length !== 0 ? true : false
+                }
                 Flow{
                     id: flow
                     width: parent.width
