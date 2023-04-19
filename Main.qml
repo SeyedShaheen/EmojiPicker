@@ -1,6 +1,6 @@
 import QtQuick
 import QtQuick.Window
-import 'emojiList.js' as Emojis
+import 'qrc:/android/assets/emojiList.js' as Emojis
 
 Window {
     width: 600
@@ -11,8 +11,8 @@ Window {
     Column{
         anchors.fill: parent;
         ListView{
-            id: tabview; currentIndex: 0
-            z: 2
+            id: tabview;
+            currentIndex: 0
             interactive: false
             width: parent.width
             height: 40
@@ -32,7 +32,8 @@ Window {
                 MouseArea{
                     anchors.fill: parent
                     onClicked: {
-                        tabview.currentIndex = index;
+                        //tabview.currentIndex = index;
+                        listview.positionViewAtIndex(index, ListView.Beginning)
                         listview.currentIndex = index;
                     }
                 }
@@ -43,7 +44,7 @@ Window {
             anchors { top: tabview.bottom; bottom: parent.bottom; bottomMargin: 10; topMargin: 10 }
             width: parent.width
             clip: true
-            highlightRangeMode: ListView.ApplyRange; preferredHighlightBegin: 40; highlightMoveDuration: 200
+            highlightRangeMode: ListView.ApplyRange; preferredHighlightBegin: 0; highlightMoveDuration: 200;
             onContentYChanged: {
                 tabview.currentIndex = indexAt(contentX, contentY) >= 0 ? indexAt(contentX, contentY) : tabview.currentIndex
             }
@@ -69,6 +70,7 @@ Window {
                 Text {
                     text: modelData.category;
                     visible: repeater.count
+                    topPadding: listview.currentItem.y <= listview.headerItem.y ? 40 : 0
                     bottomPadding: 10
                 }
                 Flow {
@@ -86,6 +88,15 @@ Window {
                                 text: modelData.emoji
                                 font.pointSize: 28
                                 font.family: 'Apple Color Emoji'
+
+                                MouseArea{
+                                anchors.fill: parent
+
+                                onClicked: {
+                                    console.log(listview.currentItem.y)
+                                    console.log(listview.headerItem.y)
+                                }
+                                }
                             }
                         }
                     }
